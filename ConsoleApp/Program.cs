@@ -16,9 +16,10 @@ namespace ConsoleApp
         /// <exception cref="System.IO.IOException">Ignore.</exception>
         static void Main(string[] args)
         {
-            context.Database.EnsureCreated();
+            //context.Database.EnsureCreated();
+
             GetPirates("Before Add");
-            AddPirate();
+            //AddPirate();
             GetPirates("After Add");
             Console.WriteLine("Press Any key...");
             Console.ReadKey();
