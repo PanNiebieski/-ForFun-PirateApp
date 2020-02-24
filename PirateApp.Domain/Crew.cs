@@ -8,6 +8,9 @@ namespace PirateApp.Domain
     {
         public int Id { get; set; }
 
+
+
+
         public string ClanName { get; set; }
     }
 }
