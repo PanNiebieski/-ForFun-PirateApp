@@ -8,7 +8,7 @@ namespace PirateApp.Domain
 
         public Pirate()
         {
-            List<Saying> Sayings = new List<Saying>();
+            Sayings = new List<Saying>();
         }
 
         public int Id { get; set; }
@@ -17,7 +17,11 @@ namespace PirateApp.Domain
 
         public List<Saying> Sayings { get; set; }
 
-        public Crew Clan { get; set; }
+        public Crew Crew { get; set; }
+
+        public Ship Ship { get; set; }
+
+        public List<PirateDuel> PirateDuels { get; set; }
 
     }
 }

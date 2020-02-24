@@ -11,6 +11,6 @@ namespace PirateApp.Domain
 
 
 
-        public string ClanName { get; set; }
+        public string CrewName { get; set; }
     }
 }

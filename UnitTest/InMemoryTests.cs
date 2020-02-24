@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PirateApp.Data;
 using PirateApp.Domain;
 
-namespace UnitTest
+namespace EntityFramework_UnitTest
 {
     [TestClass]
-    public class UnitTest1
+    public class InMemoryTests
     {
 
         [TestMethod]

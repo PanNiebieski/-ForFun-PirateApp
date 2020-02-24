@@ -11,5 +11,8 @@
   <ItemGroup>
     <ProjectReference Include="..\PirateApp.Domain\PirateApp.Domain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="migrations\" />
+  </ItemGroup>
 
 </Project>

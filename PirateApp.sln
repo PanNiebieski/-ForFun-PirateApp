@@ -3,18 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PirateApp.Domain", "PirateApp.Domain\PirateApp.Domain.csproj", "{E76D4B55-87A1-4DB0-96B9-6FC12DDBC7EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PirateApp.Domain", "PirateApp.Domain\PirateApp.Domain.csproj", "{E76D4B55-87A1-4DB0-96B9-6FC12DDBC7EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PirateApp.Data", "PirateApp.Data\PirateApp.Data.csproj", "{F81C0C96-C374-4641-B915-9B475CF587B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PirateApp.Data", "PirateApp.Data\PirateApp.Data.csproj", "{F81C0C96-C374-4641-B915-9B475CF587B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{D4029A5A-BB1C-4BB4-9943-AFEE0F49EF3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework_ConsoleApp", "ConsoleApp\EntityFramework_ConsoleApp.csproj", "{D4029A5A-BB1C-4BB4-9943-AFEE0F49EF3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{6C4B6C61-FFDE-49E5-9E2E-05A50A016037}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework_UnitTest", "UnitTest\EntityFramework_UnitTest.csproj", "{6C4B6C61-FFDE-49E5-9E2E-05A50A016037}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B903F65-D4B2-42A6-BB18-57A4BB0446FD}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework", "EntityFramework", "{3B1C93C0-C4D0-4320-9872-758D26833F0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E76D4B55-87A1-4DB0-96B9-6FC12DDBC7EA} = {3B1C93C0-C4D0-4320-9872-758D26833F0B}
+		{F81C0C96-C374-4641-B915-9B475CF587B1} = {3B1C93C0-C4D0-4320-9872-758D26833F0B}
+		{D4029A5A-BB1C-4BB4-9943-AFEE0F49EF3C} = {3B1C93C0-C4D0-4320-9872-758D26833F0B}
+		{6C4B6C61-FFDE-49E5-9E2E-05A50A016037} = {3B1C93C0-C4D0-4320-9872-758D26833F0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0728DDEC-9445-49EE-820B-F258F99EDB6B}

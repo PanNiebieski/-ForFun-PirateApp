@@ -1,4 +1,5 @@
-﻿using PirateApp.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using PirateApp.Data;
 using PirateApp.Domain;
 using System;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace ConsoleApp
         /// <exception cref="System.IO.IOException">Ignore.</exception>
         static void Main(string[] args)
         {
-            //context.Database.EnsureCreated();
+            context.Database.EnsureCreated();
 
             GetPirates("Before Add");
             //AddPirate();
@@ -29,6 +30,11 @@ namespace ConsoleApp
         private static void AddPirate()
         {
             var pirate = new Pirate() { Name = "Luffy" };
+            pirate.Crew = new Crew() { CrewName = "Słomek" };
+            pirate.Ship = new Ship() { Name = "Rakieta", Power = 2 };
+            pirate.Sayings.Add(new Saying() { Text = "Zostane królem piratów" });
+
+
             context.Pirates.Add(pirate);
             context.SaveChanges();
         }
@@ -44,6 +50,13 @@ namespace ConsoleApp
             {
                 Console.WriteLine(pirate.Name);
             }
+
+            //var pir = context.Pirates.Include(k => k.Sayings).FirstOrDefault(s => s.Name.Contains("Luffy"));
+
+            //context.Entry(pir).Collection(s => s.Sayings);
+            //context.Entry(pir).Reference(a => a.Ship);
         }
+
+
     }
 }
