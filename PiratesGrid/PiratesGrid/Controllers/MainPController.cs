@@ -7,19 +7,20 @@ using PiratesGrid.Services;
 
 namespace PiratesGrid.Controllers
 {
-    [Route("Home")]
-    public class MainPirateController : Controller
+    //[Route("")]
+    public class MainPController : Controller
     {
         private IPirateService _pirateService;
 
-        public MainPirateController(IPirateService pirateService)
+        public MainPController(IPirateService pirateService)
         {
             _pirateService = pirateService;
         }
 
-        [Route("Index")]
+        //[Route("")]
         public IActionResult Index()
         {
+            ViewBag.Title = "Welcome to Pirate Site my Friend";
             return View();
         }
     }

@@ -23,7 +23,10 @@ namespace PiratesGrid
 
             services.AddSingleton<IPirateService, PirateMemoryService>();
 
-
+            //services.AddMvc().AddRazorPagesOptions(options =>
+            //{
+            //    options.Conventions.AddPageRoute("/Index", "");
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,9 +56,22 @@ namespace PiratesGrid
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"
-                    );
+
+                    pattern: "{controller=MainP}/{action=Index}/{id?}",
+                    defaults: new
+                    {
+                        controller = "MainP",
+                        action = "Index"
+
+
+                    });
             });
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllers();
+            //    endpoints.MapRazorPages();
+            //});
         }
     }
 }
