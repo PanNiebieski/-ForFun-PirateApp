@@ -9,6 +9,7 @@ namespace PirateApp.Domain
         public Pirate()
         {
             Sayings = new List<Saying>();
+            PirateDuels = new List<PirateDuel>();
         }
 
         public int Id { get; set; }
