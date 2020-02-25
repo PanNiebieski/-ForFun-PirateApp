@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PiratesGrid.Services;
+using PirateApp.BussinesLogic;
 
 namespace PiratesGrid
 {
@@ -28,7 +28,7 @@ namespace PiratesGrid
             services.AddControllersWithViews();
             services.AddRouting(options => options.LowercaseUrls = true);
 
-            services.AddSingleton<IPirateService, PirateMemoryService>();
+            services.AddTransient<IPirateService, PirateDataBaseService>();
 
             services.Configure<PiratesGridOptions>
                 (_configuration.GetSection("PirateGrid"));

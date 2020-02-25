@@ -5,11 +5,11 @@ using System.Text;
 
 namespace PirateApp.BussinesLogic
 {
-    public class PirateInMemeoryService : IPirateService
+    public class PirateInMemoryService : IPirateService
     {
         private List<Pirate> pirates = new List<Pirate>();
 
-        public PirateInMemeoryService()
+        public PirateInMemoryService()
         {
             var pirate = new Pirate() { Name = "Luffy" };
             pirate.Crew = new Crew() { CrewName = "Słomek" };

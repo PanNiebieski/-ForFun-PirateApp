@@ -8,16 +8,22 @@ namespace PirateApp.BussinesLogic
 {
     public class PirateDataBaseService : IPirateService
     {
-        private PirateContext _context;
+        private PirateContext _context = new PirateContext();
 
-        public PirateDataBaseService(PirateContext pirateContext)
+        public PirateDataBaseService()
         {
-            _context = pirateContext;
+
         }
 
         public bool AddPirate(Pirate pirate)
         {
             _context.Pirates.Add(pirate);
+
+            foreach (var item in pirate.PirateDuels)
+            {
+                _context.Duel.Add(item.Duel);
+            }
+
             _context.SaveChanges();
             return true;
         }

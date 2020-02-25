@@ -19,3 +19,14 @@
     text-decoration: underline;
     text-align: center;
 }
+
+.marTopBot {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #808080;
+    border-radius: 6px;
+    color: black;
+    padding: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+}

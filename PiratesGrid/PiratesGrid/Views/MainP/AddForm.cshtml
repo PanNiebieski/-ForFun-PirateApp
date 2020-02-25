@@ -1,0 +1,158 @@
+﻿
+@model PiratesGrid.ViewModel.PirateViewModel
+
+<div class="marTopBot">
+    <h2>Dodanie Pirata</h2>
+</div>
+
+@if (Model.FormMode == PiratesGrid.ViewModel.FormMode.AddPirate)
+{
+    <form asp-action="Add">
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <label asp-for="Pirate.Name">Nazwa </label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" asp-for="Pirate.Name" />
+            </div>
+
+
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                Statek:
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <label asp-for="Pirate.Name">Nazwa Statku</label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" asp-for="Pirate.Name" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <label asp-for="Pirate.Ship.Power">Moc Statku</label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" asp-for="Pirate.Ship.Power" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <label asp-for="Pirate.Ship.HowManyPeopleCanTake">Jak wiele ludzi pomieści</label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" asp-for="Pirate.Ship.HowManyPeopleCanTake" />
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                Załoga:
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <label asp-for="Pirate.Crew.CrewName">Nazwa Załogi</label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" asp-for="Pirate.Crew.CrewName" />
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                Powiedzonka:
+            </div>
+        </div>
+        @for (int i = 0; i < Model.NumberOfQuotes; i++)
+        {
+
+
+            <div class="row form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <label asp-for="Pirate.Sayings[i]">Moje powiedzonko numer : @i.ToString()</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" asp-for="Pirate.Sayings[i].Text" />
+                </div>
+            </div>
+
+        }
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                Bitwy:
+            </div>
+        </div>
+        @for (int i = 0; i < Model.NumberOfBattles; i++)
+        {
+
+
+            <div class="row form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <label asp-for="Duels[i]">Nazwa Bitwy</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" asp-for="Duels[i].Name" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <label asp-for="Duels[i]">Data Startu</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" asp-for="Duels[i].StartDate" />
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-4 col-md-offset-2">
+                    <label asp-for="Duels[i]">Data Startu</label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" asp-for="Duels[i].EndDate" />
+                </div>
+            </div>
+        }
+
+        <div class="row">
+            <div class="col-md-2 col-md-offset-4">
+                <button type="submit" class="btn btn-primary">Dodaj</button>
+            </div>
+        </div>
+
+
+
+    </form>
+}
+else if (Model.FormMode == PiratesGrid.ViewModel.FormMode.AddNumberofQuotesAndBattles)
+{
+    <form asp-action="AddForm">
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <label asp-for="NumberOfBattles">Liczba Bitew :</label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" asp-for="NumberOfBattles" />
+            </div>
+
+
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4 col-md-offset-2">
+                <label asp-for="NumberOfQuotes">Liczba Cytatów:</label>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" asp-for="NumberOfQuotes" />
+            </div>
+        </div>
+        <input type="hidden" asp-for="FormMode" value="1" />
+        <div class="row">
+            <div class="col-md-2 col-md-offset-4">
+                <button type="submit" class="btn btn-primary">Kolejny krok</button>
+            </div>
+        </div>
+
+    </form>
+}

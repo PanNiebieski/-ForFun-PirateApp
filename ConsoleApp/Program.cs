@@ -28,7 +28,7 @@ namespace ConsoleApp
             //GetPirates("After Add");
 
 
-            AddShip();
+            ///AddShip();
             GetPiratesWithData();
             // GetFirstPirate();
 
@@ -70,8 +70,10 @@ namespace ConsoleApp
         public static IList<Pirate> GetPiratesWithData()
         {
             var pir = context.Pirates.Include(k => k.Sayings).
-                Include(k => k.PirateDuels).
-                Include(k => k.Ship).Include(k => k.Crew);
+                Include(k => k.PirateDuels)
+                .ThenInclude(a => a.Duel)
+
+                .Include(k => k.Ship).Include(k => k.Crew);
 
             var r = pir.ToList();
 
