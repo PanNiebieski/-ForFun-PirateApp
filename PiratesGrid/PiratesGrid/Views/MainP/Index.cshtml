@@ -1,1 +1,81 @@
 ﻿
+@model IList<PirateApp.Domain.Pirate>;
+<div class="marTopBot">
+    <h2>Pokaż Piratów</h2>
+</div>
+<div>
+    <a asp-action="AddForm">Dodaj Pirata</a>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-10 offset-md-1 ">
+            <table class="table">
+                <tr>
+                    <th>Imie</th>
+                    <th>Nazwa Statku</th>
+                    <th>Nazwa Załogi</th>
+                    <th></th>
+                </tr>
+
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>@Model[i].Name</td>
+                        <td>
+
+                            @Model[i].Ship.Name.GiveUnderScoreIfEmpty()
+
+                        </td>
+                        <td>@Model[i].Crew.CrewName.GiveUnderScoreIfEmpty()</td>
+                        <td>Więcej</td>
+                    </tr>
+
+                    @*@if (Model[i].Sayings != null)
+                        {
+                            <tr>
+                                <td colspan="3">
+                                    Powiedzonka :
+                                </td>
+                            </tr>
+                            for (int j = 0; j < Model[i].Sayings.Count; j++)
+                            {
+                                <tr>
+                                    <td colspan="3">
+                                        #@(j + 1):  @Model[i].Sayings[j].Text;
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                        @if (Model[i].PirateDuels != null)
+                        {
+                            <tr>
+                                <td colspan="3">
+                                    Bitwy :
+                                </td>
+                            </tr>
+                            for (int k = 0; k < Model[i].PirateDuels.Count; k++)
+                            {
+                                @if (Model[i].PirateDuels[k].Duel != null)
+                                {
+                                    <tr>
+                                        <td colspan="3">
+                                            Bitwy #@(k + 1):  @Model[i].PirateDuels[k].Duel.Name;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Rozpoczęcie: @Model[i].PirateDuels[k].Duel.StartDate;
+                                        </td>
+                                        <td>
+                                            Koniec: @Model[i].PirateDuels[k].Duel.EndDate;
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        }*@
+                }
+            </table>
+        </div>
+    </div>
+</div>

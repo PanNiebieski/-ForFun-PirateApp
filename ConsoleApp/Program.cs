@@ -21,8 +21,6 @@ namespace ConsoleApp
             //context.Database.EnsureCreated();
 
 
-
-
             //GetPirates("Before Add");
             //AddPirate();
             //GetPirates("After Add");

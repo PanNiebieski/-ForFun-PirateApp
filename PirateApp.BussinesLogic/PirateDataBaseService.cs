@@ -32,6 +32,7 @@ namespace PirateApp.BussinesLogic
         {
             var pir = _context.Pirates.Include(k => k.Sayings).
                 Include(k => k.PirateDuels).
+                ThenInclude(p => p.Duel).
                 Include(k => k.Ship).Include(k => k.Crew);
 
             var r = pir.ToList();

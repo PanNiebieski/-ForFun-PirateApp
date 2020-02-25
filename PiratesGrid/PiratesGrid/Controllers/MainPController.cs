@@ -30,10 +30,10 @@ namespace PiratesGrid.Controllers
             ViewBag.Title = _options.Value.WebSiteName;
 
 
-            //var pirates = _pirateService.GetAllPiratesWithData();
+            var pirates = _pirateService.GetAllPiratesWithData();
 
 
-            return View();
+            return View(pirates);
         }
 
         public IActionResult AddForm(PirateViewModel v = null)
