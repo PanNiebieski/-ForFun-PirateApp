@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using PiratesGrid.Services;
 
 namespace PiratesGrid.Controllers
@@ -12,15 +13,19 @@ namespace PiratesGrid.Controllers
     {
         private IPirateService _pirateService;
 
-        public MainPController(IPirateService pirateService)
+        private readonly IOptions<PiratesGridOptions> _options;
+
+        public MainPController(IPirateService pirateService,
+            IOptions<PiratesGridOptions> options)
         {
             _pirateService = pirateService;
+            _options = options;
         }
 
         //[Route("")]
         public IActionResult Index()
         {
-            ViewBag.Title = "Welcome to Pirate Site my Friend";
+            ViewBag.Title = _options.Value.WebSiteName;
             return View();
         }
     }
