@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PirateApp.BussinesLogic;
+using PiratesGrid.SignalR;
 
 namespace PiratesGrid
 {
@@ -26,6 +27,7 @@ namespace PiratesGrid
         {
 
             services.AddControllersWithViews();
+            services.AddSignalR();
             services.AddRouting(options => options.LowercaseUrls = true);
 
             services.AddTransient<IPirateService, PirateDataBaseService>();
@@ -79,6 +81,7 @@ namespace PiratesGrid
 
 
                     });
+                endpoints.MapHub<Chat>("/chat");
             });
 
             //app.UseEndpoints(endpoints =>

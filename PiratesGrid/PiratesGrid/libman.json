@@ -6,6 +6,25 @@
       "provider": "jsdelivr",
       "library": "bootstrap@4.4.1",
       "destination": "wwwroot/lib/bootstrap/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "@aspnet/signalr@1.1.4",
+      "destination": "wwwroot/lib/@aspnet/signalr/",
+      "files": [
+        "dist/browser/signalr.js",
+        "dist/browser/signalr.js.map",
+        "dist/browser/signalr.min.js",
+        "dist/browser/signalr.min.js.map"
+      ]
     }
+  ,
+{
+  "library": "jquery@3.4.1",
+  "destination": "wwwroot/lib/jquery/",
+  "files": [
+    "jquery.min.js"
   ]
+}
+]
 }

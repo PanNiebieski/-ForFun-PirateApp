@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\page.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\PirateApp.BussinesLogic\PirateApp.BussinesLogic.csproj" />
   </ItemGroup>
 

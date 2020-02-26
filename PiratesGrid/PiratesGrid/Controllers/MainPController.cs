@@ -36,6 +36,11 @@ namespace PiratesGrid.Controllers
             return View(pirates);
         }
 
+        public IActionResult RandomSaying()
+        {
+            return View();
+        }
+
         public IActionResult AddForm(PirateViewModel v = null)
 
         {
