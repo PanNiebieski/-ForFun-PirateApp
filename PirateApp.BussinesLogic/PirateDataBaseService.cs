@@ -3,6 +3,7 @@ using PirateApp.Data;
 using PirateApp.Domain;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace PirateApp.BussinesLogic
 {
@@ -39,6 +40,20 @@ namespace PirateApp.BussinesLogic
 
 
             return r;
+
+        }
+
+        public async Task<IList<Pirate>> GetAllPiratesWithDataAsync()
+        {
+            var pir = _context.Pirates.Include(k => k.Sayings).
+                Include(k => k.PirateDuels).
+                ThenInclude(p => p.Duel).
+                Include(k => k.Ship).Include(k => k.Crew);
+
+            var r = pir.ToListAsync();
+
+
+            return await r;
 
         }
 

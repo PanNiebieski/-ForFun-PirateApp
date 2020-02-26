@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PirateApp.BussinesLogic\PirateApp.BussinesLogic.csproj" />
+    <ProjectReference Include="..\PirateApp.Domain\PirateApp.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

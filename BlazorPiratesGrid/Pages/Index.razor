@@ -1,0 +1,49 @@
+﻿@page "/"
+
+@using BlazorPiratesGrid.Data
+@using PirateApp.Domain;
+@inject PirateBlazorService ForecastService
+
+<div class="marTopBot">
+    <h2>Pokaż Piratów</h2>
+</div>
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Imie</th>
+                <th>Nazwa Statku</th>
+                <th>Nazwa Załogi</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Name</td>
+                    <td>@forecast.Ship.Name</td>
+                    <td>@forecast.Crew.CrewName</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IList<Pirate> forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.GetPirates();
+    }
+}

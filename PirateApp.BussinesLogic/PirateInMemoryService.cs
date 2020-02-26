@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PirateApp.BussinesLogic
 {
@@ -36,6 +37,11 @@ namespace PirateApp.BussinesLogic
         public IList<Pirate> GetAllPiratesWithData()
         {
             return pirates;
+        }
+
+        public Task<IList<Pirate>> GetAllPiratesWithDataAsync()
+        {
+            throw new NotImplementedException();
         }
     }
 }

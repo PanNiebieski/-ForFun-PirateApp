@@ -20,7 +20,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework", "EntityFr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiratesGrid", "PiratesGrid\PiratesGrid\PiratesGrid.csproj", "{891064C5-6298-44AB-8DD1-FFD991F1B94D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PirateApp.BussinesLogic", "PirateApp.BussinesLogic\PirateApp.BussinesLogic.csproj", "{A82D4967-5974-425B-8D96-E8FE4FAEB51D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PirateApp.BussinesLogic", "PirateApp.BussinesLogic\PirateApp.BussinesLogic.csproj", "{A82D4967-5974-425B-8D96-E8FE4FAEB51D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP.NETCORE", "ASP.NETCORE", "{E22F9CAB-4EAB-4E17-827A-321C131BBB36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPiratesGrid", "BlazorPiratesGrid\BlazorPiratesGrid.csproj", "{7D028205-2ED6-433E-8714-DA34B74671D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +56,10 @@ Global
 		{A82D4967-5974-425B-8D96-E8FE4FAEB51D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A82D4967-5974-425B-8D96-E8FE4FAEB51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A82D4967-5974-425B-8D96-E8FE4FAEB51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D028205-2ED6-433E-8714-DA34B74671D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D028205-2ED6-433E-8714-DA34B74671D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D028205-2ED6-433E-8714-DA34B74671D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D028205-2ED6-433E-8714-DA34B74671D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +69,8 @@ Global
 		{F81C0C96-C374-4641-B915-9B475CF587B1} = {3B1C93C0-C4D0-4320-9872-758D26833F0B}
 		{D4029A5A-BB1C-4BB4-9943-AFEE0F49EF3C} = {3B1C93C0-C4D0-4320-9872-758D26833F0B}
 		{6C4B6C61-FFDE-49E5-9E2E-05A50A016037} = {3B1C93C0-C4D0-4320-9872-758D26833F0B}
+		{891064C5-6298-44AB-8DD1-FFD991F1B94D} = {E22F9CAB-4EAB-4E17-827A-321C131BBB36}
+		{A82D4967-5974-425B-8D96-E8FE4FAEB51D} = {E22F9CAB-4EAB-4E17-827A-321C131BBB36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0728DDEC-9445-49EE-820B-F258F99EDB6B}
