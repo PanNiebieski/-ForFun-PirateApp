@@ -12,7 +12,14 @@ namespace PirateApp.BussinesLogic
 
         Task<IList<Pirate>> GetAllPiratesWithDataAsync();
 
+        Task<Pirate> GetPirateDetailsAsync(int id);
+
+        Pirate GetPirateDetails(int id);
+
         bool AddPirate(Pirate pirate);
+
+        Task<int> AddPirateAsync(Pirate pirate);
+        Task<int> UpdatePirateAsync(Pirate pirate);
     }
 
 

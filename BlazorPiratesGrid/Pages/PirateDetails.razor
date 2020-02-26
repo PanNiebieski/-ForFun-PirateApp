@@ -1,0 +1,124 @@
+﻿@page "/pirateedit"
+@page "/pirateedit/{PirateId}"
+@inherits PirateDetailsBase
+@using PirateApp.Domain;
+@using BlazorPiratesGrid;
+
+@if (!Saved)
+{
+
+    <div class="marTopBot">
+        <h2>Edycja dla Pirata o Id : @Pirate.Id</h2>
+    </div>
+    <section class="edit-pirate">
+        <div></div>
+        <EditForm Model="@Pirate"
+                  OnValidSubmit="@HandleValidSubmit">
+            <div class="form-group row">
+                <label class="col-sm-4" asp-for="Pirate.Name">Imie Pirata :</label>
+                <InputText id="name" @bind-Value="@Pirate.Name"
+                           class="form-control col-sm-4"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4" asp-for="Pirate.Ship.Name">Nazwa statku:</label>
+                <InputText id="name" @bind-Value="@Pirate.Ship.Name"
+                           class="form-control col-sm-4"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4" asp-for="Pirate.Name">Nazwa ekpiy:</label>
+                <InputText id="name" @bind-Value="@Pirate.Crew.CrewName"
+                           class="form-control col-sm-4"></InputText>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4" asp-for="NumberOfSayings">
+                    Liczba Powiedzonek:
+                </label>
+                <InputNumber id="name" @bind-Value="@NumberOfSayings"
+                             class="form-control col-sm-2"></InputNumber>
+                <button type="button" class="btn btn-warning col-sm-2" @onclick="IncrementNumberOfSayings">
+                    Zmień
+                </button>
+            </div>
+
+
+
+            @foreach ((Saying value, Int32 ind) in
+Pirate.Sayings.Select((value, ind) => (value, ind)))
+            {
+                <div class="form-group row">
+                    <label class="col-sm-4" asp-for="Pirate.Name">Powiedzonko @(ind + 1):</label>
+                    <InputText id="name" @bind-Value="value.Text"
+                               class="form-control col-sm-4"></InputText>
+                </div>
+
+            }
+
+            <div class="form-group row">
+                <label class="col-sm-4" asp-for="NumberOfDuels">
+                    Liczba Powiedzonek:
+                </label>
+                <InputNumber id="name" @bind-Value="@NumberOfDuels"
+                             class="form-control col-sm-2"></InputNumber>
+                <button type="button" class="btn btn-warning col-sm-2" @onclick="IncrementNumberOfDuels">
+                    Zmień
+                </button>
+            </div>
+
+
+            @foreach (var (item, index) in Pirate.PirateDuels.WithIndex())
+            {
+                @if (item.Duel != null)
+                {
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-4" asp-for="item">
+                            Pojedynek @(index + 1):
+                        </label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4" asp-for="item">
+                            Nazwa Pojedyneku
+                        </label>
+                        <InputText id="name" @bind-Value="item.Duel.Name"
+                                   class="form-control col-sm-4"></InputText>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4" asp-for="Pirate.PirateDuels[j]">
+                            Rozpoczęcie:
+                        </label>
+                        <InputDate id="name" @bind-Value="item.Duel.StartDate"
+                                   class="form-control col-sm-4"></InputDate>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-4" asp-for="item.PirateDuels[i]">
+                            Koniec:
+                        </label>
+                        <InputDate id="name" @bind-Value="item.Duel.EndDate"
+                                   class="form-control col-sm-4"></InputDate>
+                    </div>
+                }
+
+            }
+
+            <div class="row giveMargin">
+                <div class="col-md-4 col-md-offset-4 giveMargin">
+                    <button type="submit" class="btn btn-primary col-md-3">Zmień</button>
+                </div>
+            </div>
+
+        </EditForm>
+    </section>
+}
+else
+{
+    <div class="marTopBot">
+        <h2>Operacja dla Pirata o Id : @Pirate.Id</h2>
+    </div>
+    <div class="alert @StatusClass">@Message</div>
+    <a class="btn btn-outline-primary"
+       @onclick="@NavigateToOverview">Powrót</a>
+}

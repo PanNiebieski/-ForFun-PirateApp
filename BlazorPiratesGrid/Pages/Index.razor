@@ -2,13 +2,13 @@
 
 @using BlazorPiratesGrid.Data
 @using PirateApp.Domain;
-@inject PirateBlazorService ForecastService
+@inject PirateBlazorService pirateservice
 
 <div class="marTopBot">
     <h2>Pokaż Piratów</h2>
 </div>
 
-@if (forecasts == null)
+@if (pirates == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -26,13 +26,18 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var pirate in pirates)
             {
                 <tr>
-                    <td>@forecast.Name</td>
-                    <td>@forecast.Ship.Name</td>
-                    <td>@forecast.Crew.CrewName</td>
-                    <td></td>
+                    <td>@pirate.Name</td>
+                    <td>@pirate.Ship.Name</td>
+                    <td>@pirate.Crew.CrewName</td>
+                    <td>
+                        <a href="@($"pirateedit/{pirate.Id}")"
+                           class="btn btn-primary table-btn">
+                            Edytuj
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -40,10 +45,10 @@ else
 }
 
 @code {
-    private IList<Pirate> forecasts;
+    private IList<Pirate> pirates;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetPirates();
+        pirates = await pirateservice.GetPirates();
     }
 }

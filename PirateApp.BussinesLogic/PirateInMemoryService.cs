@@ -34,12 +34,32 @@ namespace PirateApp.BussinesLogic
             return true;
         }
 
+        public Task<int> AddPirateAsync(Pirate pirate)
+        {
+            throw new NotImplementedException();
+        }
+
         public IList<Pirate> GetAllPiratesWithData()
         {
             return pirates;
         }
 
         public Task<IList<Pirate>> GetAllPiratesWithDataAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Pirate GetPirateDetails(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Pirate> GetPirateDetailsAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> UpdatePirateAsync(Pirate pirate)
         {
             throw new NotImplementedException();
         }

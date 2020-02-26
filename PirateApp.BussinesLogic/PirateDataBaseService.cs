@@ -20,10 +20,10 @@ namespace PirateApp.BussinesLogic
         {
             _context.Pirates.Add(pirate);
 
-            foreach (var item in pirate.PirateDuels)
-            {
-                _context.Duel.Add(item.Duel);
-            }
+            //foreach (var item in pirate.PirateDuels)
+            //{
+            //    _context.Duel.Add(item.Duel);
+            //}
 
             _context.SaveChanges();
             return true;
@@ -52,9 +52,29 @@ namespace PirateApp.BussinesLogic
 
             var r = pir.ToListAsync();
 
-
             return await r;
+        }
 
+        public Task<Pirate> GetPirateDetailsAsync(int id)
+        {
+            var pir = _context.Pirates.Where(k => k.Id == id)
+                .Include(k => k.Sayings).
+                Include(k => k.PirateDuels).
+                ThenInclude(p => p.Duel).
+                Include(k => k.Ship).Include(k => k.Crew);
+
+            return pir.FirstAsync();
+        }
+
+        public Pirate GetPirateDetails(int id)
+        {
+            var pir = _context.Pirates.Where(k => k.Id == id)
+                .Include(k => k.Sayings).
+                Include(k => k.PirateDuels).
+                ThenInclude(p => p.Duel).
+                Include(k => k.Ship).Include(k => k.Crew);
+
+            return pir.First();
         }
 
         public void GetFirstPirate()
@@ -69,6 +89,17 @@ namespace PirateApp.BussinesLogic
 
         }
 
+        public Task<int> AddPirateAsync(Pirate pirate)
+        {
+            _context.Pirates.Add(pirate);
 
+            return _context.SaveChangesAsync(); ;
+        }
+
+        public Task<int> UpdatePirateAsync(Pirate pirate)
+        {
+            _context.Update(pirate);
+            return _context.SaveChangesAsync(); ;
+        }
     }
 }
