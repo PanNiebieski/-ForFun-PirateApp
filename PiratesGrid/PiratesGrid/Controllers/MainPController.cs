@@ -10,7 +10,7 @@ using PiratesGrid.ViewModel;
 
 namespace PiratesGrid.Controllers
 {
-    //[Route("")]
+
     public class MainPController : Controller
     {
         private IPirateService _pirateService;
@@ -24,7 +24,6 @@ namespace PiratesGrid.Controllers
             _options = options;
         }
 
-        //[Route("")]
         public IActionResult Index()
         {
             ViewBag.Title = _options.Value.WebSiteName;
@@ -36,10 +35,7 @@ namespace PiratesGrid.Controllers
             return View(pirates);
         }
 
-        public IActionResult RandomSaying()
-        {
-            return View();
-        }
+
 
         public IActionResult AddForm(PirateViewModel v = null)
 

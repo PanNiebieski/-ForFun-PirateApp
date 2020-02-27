@@ -38,7 +38,8 @@
                 </label>
                 <InputNumber id="name" @bind-Value="@NumberOfSayings"
                              class="form-control col-sm-2"></InputNumber>
-                <button type="button" class="btn btn-warning col-sm-2" @onclick="IncrementNumberOfSayings">
+                <button type="button" class="btn btn-warning col-sm-2"
+                        @onclick="IncrementNumberOfSayings">
                     Zmień
                 </button>
             </div>
@@ -46,7 +47,7 @@
 
 
             @foreach ((Saying value, Int32 ind) in
-Pirate.Sayings.Select((value, ind) => (value, ind)))
+              Pirate.Sayings.Select((value, ind) => (value, ind)))
             {
                 <div class="form-group row">
                     <label class="col-sm-4" asp-for="Pirate.Name">Powiedzonko @(ind + 1):</label>
@@ -62,7 +63,8 @@ Pirate.Sayings.Select((value, ind) => (value, ind)))
                 </label>
                 <InputNumber id="name" @bind-Value="@NumberOfDuels"
                              class="form-control col-sm-2"></InputNumber>
-                <button type="button" class="btn btn-warning col-sm-2" @onclick="IncrementNumberOfDuels">
+                <button type="button" class="btn btn-warning col-sm-2"
+                        @onclick="IncrementNumberOfDuels">
                     Zmień
                 </button>
             </div>

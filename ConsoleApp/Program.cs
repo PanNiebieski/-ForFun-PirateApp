@@ -25,6 +25,9 @@ namespace ConsoleApp
             //AddPirate();
             //GetPirates("After Add");
 
+            GetFirstPirate();
+            Console.ReadKey();
+            Console.WriteLine("Press Any key...");
 
             ///AddShip();
             GetPiratesWithData();
@@ -78,8 +81,7 @@ namespace ConsoleApp
 
             return r;
 
-            //_context.Entry(pir).Collection(s => s.Sayings);
-            //_context.Entry(pir).Reference(a => a.Ship);
+
         }
 
         public static void AddDuel()

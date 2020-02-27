@@ -59,7 +59,6 @@ namespace PiratesGrid
             app.UseRouting();
 
 
-
             //app.UseEndpoints(endpoints =>
             //{
             //    endpoints.MapGet("/", async context =>
