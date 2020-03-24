@@ -1,18 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PirateApp.Domain
 {
+
     public class Pirate
     {
 
         public Pirate()
         {
+
             Sayings = new List<Saying>();
             PirateDuels = new List<PirateDuel>();
         }
 
         public int Id { get; set; }
+
 
         public string Name { get; set; }
 
@@ -22,7 +26,11 @@ namespace PirateApp.Domain
 
         public Ship Ship { get; set; }
 
+
         public List<PirateDuel> PirateDuels { get; set; }
+
+
+
 
     }
 }

@@ -49,7 +49,17 @@ namespace PirateApp.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //tabela nie ma kluczu głównego
             modelBuilder.Entity<PirateDuel>().HasKey(s => new { s.PirateId, s.DuelId });
+
+            //modelBuilder.Entity<PirateDuel>().ToTable("PirateBattle");
+
+
+            //modelBuilder.Entity<Pirate>().Property(p => p.Name)
+            //    .HasColumnName("Namues")
+            //    .HasColumnType("DateTime");
+
+
 
         }
 

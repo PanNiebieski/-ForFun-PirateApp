@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PirateApp.BussinesLogic;
-using PiratesGrid.SignalR;
 
 namespace PiratesGrid
 {
@@ -35,10 +34,6 @@ namespace PiratesGrid
             services.Configure<PiratesGridOptions>
                 (_configuration.GetSection("PirateGrid"));
 
-            //services.AddMvc().AddRazorPagesOptions(options =>
-            //{
-            //    options.Conventions.AddPageRoute("/Index", "");
-            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,14 +75,9 @@ namespace PiratesGrid
 
 
                     });
-                endpoints.MapHub<Chat>("/chat");
             });
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-            //    endpoints.MapRazorPages();
-            //});
+
         }
     }
 }

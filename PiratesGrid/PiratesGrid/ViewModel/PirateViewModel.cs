@@ -19,7 +19,7 @@ namespace PiratesGrid.ViewModel
 
         public List<Duel> Duels { get; set; }
 
-        public bool AddPirateMode { get; set; }
+
 
         public int NumberOfQuotes { get; set; }
 

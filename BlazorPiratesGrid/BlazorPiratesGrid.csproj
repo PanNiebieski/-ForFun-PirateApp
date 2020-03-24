@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Data\WeatherForecast.cs" />
+    <Compile Remove="Data\WeatherForecastService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PirateApp.BussinesLogic\PirateApp.BussinesLogic.csproj" />
     <ProjectReference Include="..\PirateApp.Domain\PirateApp.Domain.csproj" />
   </ItemGroup>
