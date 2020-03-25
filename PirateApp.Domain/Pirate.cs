@@ -26,7 +26,6 @@ namespace PirateApp.Domain
 
         public Ship Ship { get; set; }
 
-
         public List<PirateDuel> PirateDuels { get; set; }
 
 
