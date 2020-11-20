@@ -32,7 +32,8 @@ namespace BlazorPiratesGrid
             services.AddServerSideBlazor();
             services.AddSingleton<PirateBlazorService>();
 
-            services.AddTransient<IPirateService, PirateDataBaseService>();
+            services.AddTransient<IPirateService,
+                PirateDataBaseService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

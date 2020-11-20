@@ -63,7 +63,7 @@ namespace BlazorPiratesGrid.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            if (PirateId != null)
+            if (PirateId != null && PirateId != "0")
             {
                 Pirate = await pirateService.GetPirateDetailsAsync
     (int.Parse(PirateId));

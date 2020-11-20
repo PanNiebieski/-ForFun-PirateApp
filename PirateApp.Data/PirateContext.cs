@@ -30,7 +30,7 @@ namespace PirateApp.Data
                 optionsBuilder.UseSqlServer(connectionString,
                     option => option.MaxBatchSize(150)).
                     UseLoggerFactory(ConsoleLoggerFactory);
-                ;
+                
             }
 
 

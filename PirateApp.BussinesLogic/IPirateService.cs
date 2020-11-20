@@ -19,6 +19,7 @@ namespace PirateApp.BussinesLogic
         bool AddPirate(Pirate pirate);
 
         Task<int> AddPirateAsync(Pirate pirate);
+
         Task<int> UpdatePirateAsync(Pirate pirate);
     }
 

@@ -55,7 +55,7 @@
 
 
             @foreach ((Saying value, Int32 ind) in
-        Pirate.Sayings.Select((value, ind) => (value, ind)))
+       Pirate.Sayings.Select((value, ind) => (value, ind)))
             {
                 <div class="form-group row">
                     <label class="col-sm-4" asp-for="Pirate.Name">Powiedzonko @(ind + 1):</label>
@@ -67,7 +67,7 @@
 
             <div class="form-group row">
                 <label class="col-sm-4" asp-for="NumberOfDuels">
-                    Liczba Powiedzonek:
+                    Liczba Pojedynków:
                 </label>
                 <InputNumber id="name" @bind-Value="@NumberOfDuels"
                              class="form-control col-sm-2"></InputNumber>

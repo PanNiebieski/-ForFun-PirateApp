@@ -20,11 +20,6 @@ namespace PirateApp.BussinesLogic
         {
             _context.Pirates.Add(pirate);
 
-            //foreach (var item in pirate.PirateDuels)
-            //{
-            //    _context.Duel.Add(item.Duel);
-            //}
-
             _context.SaveChanges();
             return true;
         }
